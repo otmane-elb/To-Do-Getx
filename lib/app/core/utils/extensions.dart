@@ -1,14 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+// Create an extension named "PercentSized" on the double data type.
 extension PercentSized on double {
+  // Create a getter named "hp" (Height Percentage) that calculates the
+  // height as a percentage of the screen's height.
   double get hp => (Get.height * (this / 100));
+
+  // Create a getter named "wp" (Width Percentage) that calculates the
+  // width as a percentage of the screen's width.
   double get wp => (Get.width * (this / 100));
 }
 
+// Create an extension named "ResponsiveText" on the double data type.
 extension ResponsiveText on double {
+  // Create a getter named "sp" (Scale Percentage) that calculates the
+  // text size based on a fraction of the screen's width.
   double get sp => Get.width / 100 * (this / 3);
 }
+
 
 extension HexColor on Color {
   /// String is in the format "aabbcc" or "ffaabbcc" with an optional leading "#".
