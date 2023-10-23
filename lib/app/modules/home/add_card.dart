@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:todogetx/app/core/utils/extensions.dart';
-import 'package:todogetx/app/core/values/colors.dart';
 import 'package:todogetx/app/data/models/task.dart';
 import 'package:todogetx/app/modules/home/controller.dart';
 import 'package:todogetx/app/widgets/icons.dart';
@@ -17,6 +16,9 @@ class AddCard extends StatelessWidget {
     final icons = getIcons();
     var squarWidth = Get.width - 12.0.wp;
     return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+      ),
       height: squarWidth / 2,
       width: squarWidth / 2,
       margin: EdgeInsets.all(3.0.wp),
@@ -34,7 +36,7 @@ class AddCard extends StatelessWidget {
                       padding: EdgeInsets.symmetric(horizontal: 3.0.wp),
                       child: TextFormField(
                         controller: homCtrl.editController,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           border: OutlineInputBorder(),
                           label: Text("Title"),
                         ),
@@ -80,7 +82,7 @@ class AddCard extends StatelessWidget {
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(7),
                             ),
-                            minimumSize: Size(150, 50)),
+                            minimumSize: const Size(150, 50)),
                         onPressed: () {
                           if (homCtrl.formKey.currentState!.validate()) {
                             int icon =
@@ -98,7 +100,7 @@ class AddCard extends StatelessWidget {
                                 : EasyLoading.showError("Task already exists");
                           }
                         },
-                        child: Text("Confirm"))
+                        child: const Text("Confirm"))
                   ],
                 ),
               ));
@@ -106,10 +108,10 @@ class AddCard extends StatelessWidget {
           homCtrl.changeChipIndex(0);
         },
         child: DottedBorder(
-          dashPattern: [10],
+          dashPattern: const [5],
           strokeWidth: 2,
           color: Colors.grey[400]!,
-          child: Center(
+          child: const Center(
             child: Icon(Icons.add),
           ),
         ),
