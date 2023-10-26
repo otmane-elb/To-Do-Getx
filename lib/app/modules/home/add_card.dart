@@ -4,7 +4,7 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:todogetx/app/core/utils/extensions.dart';
 import 'package:todogetx/app/data/models/task.dart';
-import 'package:todogetx/app/modules/home/controller.dart';
+import 'package:todogetx/app/modules/home/home_controller.dart';
 import 'package:todogetx/app/widgets/icons.dart';
 
 class AddCard extends StatelessWidget {

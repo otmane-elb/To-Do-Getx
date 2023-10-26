@@ -5,7 +5,7 @@ import 'package:get_storage/get_storage.dart';
 import 'package:todogetx/app/data/services/storage/services.dart';
 import 'package:todogetx/app/modules/home/binding.dart';
 
-import 'app/modules/home/view.dart';
+import 'app/modules/home/home_view.dart';
 
 void main() async {
   await GetStorage.init();
