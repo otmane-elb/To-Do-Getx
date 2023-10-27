@@ -20,7 +20,7 @@ class TaskCard extends StatelessWidget {
       onTap: () {
         homectrl.changeTask(task);
         homectrl.changeTodods(task.todos ?? []);
-        Get.to(() => DetailPage());
+        Get.to(() => DetailPage(), transition: Transition.rightToLeft);
       },
       child: Container(
         height: squarWidth / 2,
@@ -41,8 +41,9 @@ class TaskCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             StepProgressIndicator(
-              totalSteps: 1,
-              currentStep: 1,
+              totalSteps:
+                  (task.todos?.isNotEmpty == true) ? task.todos!.length : 1,
+              currentStep: homectrl.countCompletedTodos(task.todos),
               size: 5,
               padding: 0,
               selectedGradientColor: LinearGradient(

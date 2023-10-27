@@ -28,7 +28,41 @@ class DoingList extends StatelessWidget {
                 ),
               ],
             )
-          : Text("Data"),
+          : ListView(
+              shrinkWrap: true,
+              physics: ClampingScrollPhysics(),
+              children: [
+                ...homeCtrl.doingtodos
+                    .map((element) => Padding(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 10.0.wp, vertical: 1.0.hp),
+                          child: Row(
+                            children: [
+                              SizedBox(
+                                width: 20,
+                                height: 20,
+                                child: Checkbox(
+                                  fillColor: MaterialStateProperty.resolveWith(
+                                      (states) => Colors.grey),
+                                  value: element['done'],
+                                  onChanged: ((value) {
+                                    homeCtrl.doneTodo(element['title']);
+                                  }),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 3.0.wp,
+                              ),
+                              Text(
+                                element['title'],
+                                overflow: TextOverflow.ellipsis,
+                              )
+                            ],
+                          ),
+                        ))
+                    .toList()
+              ],
+            ),
     );
   }
 }

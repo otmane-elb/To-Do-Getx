@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 import 'package:todogetx/app/core/utils/extensions.dart';
 import 'package:todogetx/app/modules/details/widgets/doing_list.dart';
+import 'package:todogetx/app/modules/details/widgets/done_list.dart';
 import 'package:todogetx/app/modules/home/home_controller.dart';
 
 class DetailPage extends StatelessWidget {
@@ -105,7 +106,7 @@ class DetailPage extends StatelessWidget {
               }),
               Padding(
                 padding:
-                    EdgeInsets.symmetric(horizontal: 12.0.wp, vertical: 5.0.hp),
+                    EdgeInsets.symmetric(horizontal: 12.0.wp, vertical: 2.0.hp),
                 child: TextFormField(
                   controller: homectrl.editController,
                   autofocus: true,
@@ -142,7 +143,8 @@ class DetailPage extends StatelessWidget {
                   },
                 ),
               ),
-              DoingList()
+              DoingList(),
+              DoneList()
             ],
           ),
         ),
