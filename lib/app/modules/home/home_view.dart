@@ -24,11 +24,23 @@ class HomePage extends GetView<HomeController> {
         title: Obx(
           () => Padding(
               padding: EdgeInsets.all(4.0.wp),
-              child: controller.tabIndex == 0
-                  ? Text(
-                      "My Tasks",
-                      style: TextStyle(
-                          fontSize: 24.0.sp, fontWeight: FontWeight.bold),
+              child: controller.tabIndex.value == 0
+                  ? Row(
+                      children: [
+                        Icon(
+                          Icons.task_outlined,
+                          size: 10.0.wp,
+                          color: green,
+                        ),
+                        SizedBox(
+                          width: 5.0.wp,
+                        ),
+                        Text(
+                          "My Tasks",
+                          style: TextStyle(
+                              fontSize: 24.0.sp, fontWeight: FontWeight.bold),
+                        ),
+                      ],
                     )
                   : Row(
                       children: [

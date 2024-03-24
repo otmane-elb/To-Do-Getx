@@ -30,7 +30,7 @@ class DoingList extends StatelessWidget {
             )
           : ListView(
               shrinkWrap: true,
-              physics: ClampingScrollPhysics(),
+              physics: const ClampingScrollPhysics(),
               children: [
                 ...homeCtrl.doingtodos
                     .map((element) => Padding(

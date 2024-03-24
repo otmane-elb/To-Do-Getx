@@ -15,13 +15,13 @@ class DoneList extends StatelessWidget {
           ? Container()
           : ListView(
               shrinkWrap: true,
-              physics: ClampingScrollPhysics(),
+              physics: const ClampingScrollPhysics(),
               children: [
                 homeCtrl.doingtodos.isNotEmpty
                     ? Padding(
                         padding: EdgeInsets.symmetric(
                             horizontal: 20.0.wp, vertical: 1.0.hp),
-                        child: Divider(),
+                        child: const Divider(),
                       )
                     : Container(),
                 Padding(
@@ -43,7 +43,7 @@ class DoneList extends StatelessWidget {
                             padding: EdgeInsets.only(right: 2.0.wp),
                             color: Colors.red,
                             alignment: Alignment.centerRight,
-                            child: Icon(Icons.delete),
+                            child: const Icon(Icons.delete),
                           ),
                           child: Padding(
                             padding: EdgeInsets.symmetric(
@@ -69,7 +69,7 @@ class DoneList extends StatelessWidget {
                                 Text(
                                   element['title'],
                                   overflow: TextOverflow.ellipsis,
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     decoration: TextDecoration.lineThrough,
                                   ),
                                 )

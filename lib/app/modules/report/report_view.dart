@@ -32,17 +32,21 @@ class ReportPage extends StatelessWidget {
                       color: Colors.grey),
                 ),
               ),
-              Divider(),
+              const Divider(),
               SizedBox(
                 height: 3.0.hp,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  _buildStatus(Colors.orange, liveTasks, "Live Tasks"),
-                  _buildStatus(Colors.green, completedTasks, "Completed Tasks"),
-                  _buildStatus(Colors.blue, totalTasks, "All Tasks"),
-                ],
+              Padding(
+                padding: EdgeInsets.only(right: 5.0.wp),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    _buildStatus(Colors.orange, liveTasks, "Live Tasks"),
+                    _buildStatus(
+                        Colors.green, completedTasks, "Completed Tasks"),
+                    _buildStatus(Colors.blue, totalTasks, "All Tasks"),
+                  ],
+                ),
               ),
               SizedBox(
                 height: 5.0.hp,

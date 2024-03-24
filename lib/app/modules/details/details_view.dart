@@ -111,10 +111,10 @@ class DetailPage extends StatelessWidget {
                   controller: homectrl.editController,
                   autofocus: true,
                   decoration: InputDecoration(
-                    border: UnderlineInputBorder(
+                    border: const UnderlineInputBorder(
                       borderSide: BorderSide(color: Colors.grey),
                     ),
-                    prefixIcon: Icon(
+                    prefixIcon: const Icon(
                       Icons.check_box_outline_blank_outlined,
                       color: Colors.grey,
                     ),
@@ -131,7 +131,7 @@ class DetailPage extends StatelessWidget {
                           homectrl.editController.clear();
                         }
                       },
-                      icon: Icon(Icons.done),
+                      icon: const Icon(Icons.done),
                     ),
                   ),
                   validator: (value) {
