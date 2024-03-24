@@ -21,6 +21,12 @@ class HomeController extends GetxController {
     super.onInit();
     tasks.assignAll(taskRepository.readTask());
     ever(tasks, (_) => taskRepository.writeTask(tasks));
+    delayedInit();
+  }
+
+  Future<void> delayedInit() async {
+    // Add a delay of 500 milliseconds (adjust as needed)
+    await Future.delayed(const Duration(milliseconds: 500));
   }
 
   @override
